@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image to PDF Converter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Image to PDF</h1>
+      <div class="toggle-theme">
+        <input type="checkbox" id="themeToggle" />
+        <label for="themeToggle">🌙</label>
+      </div>
+    </header>
+
+    <div class="upload-section">
+      <div class="drop-area" id="upload-area">
+        <input type="file" id="imageUpload" multiple accept="image/*" />
+        <p>📤 Click or Drag Images Here</p>
+      </div>
+    </div>
+
+    <div class="settings">
+      <select id="orientation">
+        <option value="p">Portrait</option>
+        <option value="l">Landscape</option>
+      </select>
+      <select id="size">
+        <option value="a4">A4</option>
+        <option value="letter">Letter</option>
+      </select>
+    </div>
+
+    <div class="preview-grid" id="preview"></div>
+
+    <div class="actions">
+      <button id="convertBtn">Preview PDF</button>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="modal">
+    <div class="modal-content">
+      <iframe id="pdfPreview"></iframe>
+      <div class="modal-buttons">
+        <button id="downloadBtn">Download PDF</button>
+        <button id="closeModal">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

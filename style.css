@@ -1,0 +1,170 @@
+:root {
+  --bg: #f7f8fc;
+  --card: #fff;
+  --text: #111;
+  --accent: #6366f1;
+  --accent-dark: #4f46e5;
+  --drop: #e0e7ff;
+  --modal-bg: rgba(0, 0, 0, 0.8);
+}
+
+body.dark {
+  --bg: #121212;
+  --card: #1f1f1f;
+  --text: #f1f1f1;
+  --drop: #2a2a2a;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease;
+}
+
+.app {
+  max-width: 800px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.toggle-theme input {
+  display: none;
+}
+
+.toggle-theme label {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.upload-section {
+  margin-bottom: 20px;
+}
+
+.drop-area {
+  background: var(--drop);
+  border: 2px dashed var(--accent);
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  transition: background 0.3s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.drop-area input {
+  opacity: 0;
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+
+.drop-area:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+.settings {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.settings select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.preview-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.preview-grid img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: grab;
+  transition: transform 0.3s;
+}
+
+.preview-grid img:hover {
+  transform: scale(1.05);
+}
+
+.actions {
+  text-align: center;
+}
+
+button {
+  padding: 14px 24px;
+  font-size: 16px;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--accent-dark);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: var(--modal-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 90%;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-content iframe {
+  width: 100%;
+  height: 500px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 10px;
+}
